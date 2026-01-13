@@ -116,9 +116,9 @@ export default function InvestmentModal({ selectedPlan, onClose }) {
       open={!!selectedPlan} // Open the dialog if a plan is selected
       handler={onClose}
       className='bg-transparent shadow-none'>
-      <Card variant='gradient' color='gray' className='w-full md:max-w-md mx-auto md:mx-0 p-6 mt-4'>
+      <Card  className='w-full md:max-w-md mx-auto md:mx-0 p-6 mt-4 bg-primary-default'>
         <div className='flex justify-between'>
-          <Typography variant='h5' className='mb-4'>
+          <Typography variant='h5' className='mb-4 text-text-light'>
             Selected Investment: {selectedPlan.name}
           </Typography>
           <QuestionMarkCircleIcon
@@ -150,9 +150,9 @@ export default function InvestmentModal({ selectedPlan, onClose }) {
             })}
           </p>
         </div>
-        <div className='space-y-4'>
+        <div className='space-y-4 text-text-light'>
           <div className='mb-4'>
-            <label className='block text-sm font-semibold text-text-light mb-1' htmlFor='amount'>
+            <label className='block text-sm font-semibold mb-1' htmlFor='amount'>
               Amount ($)
             </label>
             <input

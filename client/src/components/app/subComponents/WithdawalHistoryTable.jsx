@@ -106,7 +106,7 @@ const WithdrawalHistoryTable = () => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   return (
-    <Card className='text-text-light w-full rounded-lg shadow-md' variant='gradient' color='gray'>
+    <Card className='text-text-light w-full rounded-lg shadow-md bg-primary-default'>
       <div className='flex flex-wrap justify-between items-center p-2 min-w-96'>
         <div>
           <h3 className='text-lg font-semibold'>Withdrawal History</h3>
@@ -155,7 +155,7 @@ const WithdrawalHistoryTable = () => {
           <Loader />
         ) : (
           <table className='w-full text-left text-sm'>
-            <thead className='bg-primary-mild'>
+            <thead className='bg-primary-light'>
               <tr>
                 <th className='p-4'>Transaction ID</th>
                 <th className='p-4'>Option</th>

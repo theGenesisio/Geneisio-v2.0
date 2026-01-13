@@ -73,7 +73,7 @@ const PasswordReset = () => {
   };
   return (
     <Card
-      className='flex flex-col min-h-fit justify-center lg:justify-start profile-box max-w-2xl'
+      className='flex flex-col min-h-fit justify-center lg:justify-start profile-box max-w-2xl text-text-light'
       >
       <h2 className='text-xl font-semibold mb-4'>Change your password below.</h2>
 

@@ -152,8 +152,8 @@ const KYCUpload = () => {
     return setshowKYC((prev) => !prev);
   };
   return (
-    <Card className='w-full max-w-4xl profile-box' variant='gradient' color='gray'>
-      <h2 className='text-lg font-semibold mb-4 flex justify-between'>
+    <Card className='w-full max-w-4xl profile-box' >
+      <h2 className='text-lg font-semibold mb-4 flex justify-between text-text-light'>
         {user?.KYC
           ? data?.state
             ? "KYC Approved"

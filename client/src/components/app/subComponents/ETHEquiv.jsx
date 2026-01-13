@@ -3,7 +3,7 @@ import { ethIcon } from "../../../assets/icons";
 
 const ETHEquiv = () => {
   return (
-    <Card className='dashboard-box flex flex-col' variant='gradient' color='gray'>
+    <Card className='dashboard-box flex flex-col' >
       <h2 className='font-semibold text-xl flex flex-col'>
         <span className='h-7 w-7 scale-150 ms-1'>{ethIcon}</span>
         Ethereum Equivalent

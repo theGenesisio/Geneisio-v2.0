@@ -120,7 +120,7 @@ export default function Upgrade() {
           <Loader />
         ) : (
           currenttiers.map((tier, index) => (
-            <Card key={index} color='gray' variant='gradient' className='w-full p-6'>
+            <Card key={index} className='w-full p-6 bg-primary-default'>
               <CardHeader
                 floated={false}
                 shadow={false}
@@ -130,7 +130,7 @@ export default function Upgrade() {
                   {tier.name}
                 </Typography>
               </CardHeader>
-              <CardBody className='p-0'>
+              <CardBody className='p-0 text-text-light'>
                 <ul className='flex flex-col gap-4'>
                   <li className='flex items-center gap-4'>
                     <CheckCircleIcon className='w-5 h-5 text-primary-mild' />
@@ -157,7 +157,7 @@ export default function Upgrade() {
         <Button
           onClick={handlePrevPage}
           disabled={currentPage === 1}
-          className='bg-primary-mild text-text-dark hover:bg-primary-light'>
+          className='bg-primary-light text-text-dark hover:bg-primary-light'>
           Previous
         </Button>
         <Typography variant='small' color='gray'>
@@ -166,7 +166,7 @@ export default function Upgrade() {
         <Button
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
-          className='bg-primary-mild text-text-dark hover:bg-primary-light'>
+          className='bg-primary-light text-text-dark hover:bg-primary-light'>
           Next
         </Button>
       </div>

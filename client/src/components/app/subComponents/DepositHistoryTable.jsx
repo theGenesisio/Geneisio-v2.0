@@ -88,7 +88,7 @@ const DepositHistoryTable = () => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   return (
-    <Card className='text-text-light w-full rounded-md shadow-md' variant='gradient' color='gray'>
+    <Card className='text-text-light w-full rounded-md shadow-md bg-primary-default'>
       {/* Header Section */}
       <div className='flex flex-wrap justify-between items-center p-2 min-w-96'>
         <div>
@@ -140,7 +140,7 @@ const DepositHistoryTable = () => {
           <Loader />
         ) : (
           <table className='w-full text-left text-sm'>
-            <thead className='bg-primary-mild'>
+            <thead className='bg-primary-light'>
               <tr>
                 <th className='p-4'>Transaction ID</th>
                 <th className='p-4'>Option</th>

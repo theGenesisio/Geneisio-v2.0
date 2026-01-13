@@ -60,7 +60,7 @@ const RangeBarChart = () => {
       enabled: false, // Disabled tooltips
     },
     theme: {
-      mode: "dark", // Set to dark theme
+      mode: "transparent", // Set to dark theme
     },
   };
 

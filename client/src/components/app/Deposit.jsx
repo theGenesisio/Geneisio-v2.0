@@ -70,7 +70,7 @@ const Deposit = () => {
   };
 
   return (
-    <div className='space-y-4'>
+    <div className='space-y-4 bg-primary-default'>
       <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:gap-2 gap-x-0 gap-y-5'>
         {isLoading ? (
           <div className='deposit-box'>

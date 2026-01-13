@@ -124,7 +124,7 @@ const ProfileImageUpload = () => {
     }
   };
   return (
-    <Card className='w-full max-w-4xl profile-box' variant='gradient' color='gray'>
+    <Card className='w-full max-w-4xl profile-box' >
       <h2 className='text-lg font-semibold text-text-light mb-4'>Upload New Profile Image</h2>
       <form className='flex flex-col space-y-4'>
         <input

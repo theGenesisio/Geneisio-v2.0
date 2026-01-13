@@ -83,7 +83,7 @@ const LiveTradeHistoryTable = () => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   return (
-    <Card className='text-text-light w-full rounded-lg shadow-md' variant='gradient' color='gray'>
+    <Card className='text-text-light w-full rounded-lg shadow-md bg-primary-default'>
       <div className='flex flex-wrap justify-between items-center p-2 min-w-96'>
         <div>
           <h3 className='text-lg font-semibold'>Live Trade History</h3>
@@ -132,7 +132,7 @@ const LiveTradeHistoryTable = () => {
           <Loader />
         ) : (
           <table className='w-full text-left text-sm'>
-            <thead className='bg-primary-mild'>
+            <thead className='bg-primary-light'>
               <tr>
                 <th className='p-4'>Trade ID</th>
                 <th className='p-4'>Trade Type</th>

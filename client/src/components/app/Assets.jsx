@@ -71,7 +71,7 @@ const Assets = () => {
   };
   return (
     <Card
-      className='text-text-light w-full rounded-lg shadow-md pb-4'
+      className='text-text-light w-full rounded-lg shadow-md pb-4 bg-primary-default'
     >
       <div className='flex flex-col p-2 min-w-96'>
         <p className='text-lg text-primary-light capitalize'>Crypto Assets</p>
@@ -86,7 +86,7 @@ const Assets = () => {
           <Loader />
         ) : (
           <table className='w-full text-left text-sm'>
-            <thead className='bg-primary-mild'>
+            <thead className='bg-primary-light'>
               {Object.entries(crypto.cryptoAssets).some(([, amount]) => parseFloat(amount) > 0) && (
                 <tr>
                   <th className='p-4'>Sym</th>

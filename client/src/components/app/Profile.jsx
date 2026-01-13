@@ -64,7 +64,7 @@ const ProfilePage = () => {
   return (
     <div className='min-h-screen flex flex-col space-y-4'>
       {/* Header */}
-      <Card className='w-full max-w-4xl profile-box relative' variant='gradient' color='gray'>
+      <Card className='w-full max-w-4xl profile-box relative' >
         {user?.imageFilename ? (
           <Profilepic />
         ) : (
@@ -88,7 +88,7 @@ const ProfilePage = () => {
       {/* Main Section */}
       <div className='w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-4'>
         {/* Personal Info Section */}
-        <Card className='profile-box' variant='gradient' color='gray'>
+        <Card className='profile-box' >
           <h2 className='text-lg font-semibold text-text-light mb-4'>Personal Info</h2>
           <div className='space-y-4'>
             <p>
@@ -107,7 +107,7 @@ const ProfilePage = () => {
         </Card>
 
         {/* Account Info Section */}
-        <Card className='profile-box' variant='gradient' color='gray'>
+        <Card className='profile-box' >
           <h2 className='text-lg font-semibold text-text-light mb-4'>Account Info</h2>
           <div className='space-y-4'>
             <p>

@@ -65,14 +65,14 @@ export default function UpgradeModal({ selectedTier, onClose, currentTier }) {
       open={!!selectedTier} // Open the dialog if a plan is selected
       handler={onClose}
       className='bg-transparent shadow-none'>
-      <Card variant='gradient' color='gray' className='w-full md:max-w-md mx-auto md:mx-0 p-6 mt-4'>
+      <Card  className='w-full md:max-w-md mx-auto md:mx-0 p-6 mt-4 bg-primary-default'>
         <div className='flex justify-between gap-4'>
           <Typography variant='h6' className='mb-4 text-nowrap text-primary-light'>
             Selected Tier: <span className='text-white'>{selectedTier?.name}</span>
           </Typography>
           <QuestionMarkCircleIcon
             title='Info'
-            className='h-7 w-7 hover:scale-110 transition-transform cursor-help'
+            className='h-7 w-7 hover:scale-110 transition-transform cursor-help text-text-light'
             onClick={() => setShowPrompt((prev) => !prev)} // Toggle the informational prompt
           />
         </div>
@@ -85,13 +85,13 @@ export default function UpgradeModal({ selectedTier, onClose, currentTier }) {
             </p>
           </div>
         )}
-        <div className='flex flex-row gap-4 justify-between'>
+        <div className='flex flex-row gap-4 justify-between text-text-light'>
           <Typography variant='h6' className='mb-4 text-sm text-primary-light text-nowrap'>
-            Current Tier: <span className='text-white'>{name || "Base"}</span>
+            Current Tier: <span className=''>{name || "Base"}</span>
             {/* Display current tier name or "Base" if not available */}
           </Typography>
           <Typography variant='h6' className='mb-4 text-sm text-primary-light text-nowrap'>
-            Status: <span className='text-white capitalize'>{status || "Active by default"}</span>
+            Status: <span className='capitalize'>{status || "Active by default"}</span>
             {/* Display current tier name or "Base" if not available */}
           </Typography>
         </div>

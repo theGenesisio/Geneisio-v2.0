@@ -118,8 +118,8 @@ const Withdrawal = () => {
   };
 
   return (
-    <Card variant='gradient' color='gray' className='w-full md:max-w-md mx-auto md:mx-0'>
-      <CardBody className='text-text-light space-y-4'>
+    <Card  className='w-full md:max-w-md mx-auto md:mx-0'>
+      <CardBody className='text-text-light space-y-4 bg-primary-default'>
         <div className='flex justify-between items-center'>
           <h2 className='text-2xl font-semibold capitalize'>Withdrawal Request</h2>
           <QuestionMarkCircleIcon

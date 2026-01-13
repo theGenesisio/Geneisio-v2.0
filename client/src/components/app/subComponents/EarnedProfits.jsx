@@ -70,7 +70,7 @@ const AreaChart = () => {
       show: false, // Hides the legend
     },
     theme: {
-      mode: "dark", // Set to dark theme
+      mode: "transparent", // Set to dark theme
     },
   };
 

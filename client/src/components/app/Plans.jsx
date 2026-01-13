@@ -85,7 +85,7 @@ export default function PricingCard() {
           <Loader />
         ) : (
           currentPlans.map((plan, index) => (
-            <Card key={index} color='gray' variant='gradient' className='w-full p-6'>
+            <Card key={index}  className='w-full p-6 bg-primary-default text-text-light'>
               <CardHeader
                 floated={false}
                 shadow={false}
@@ -136,7 +136,7 @@ export default function PricingCard() {
         <Button
           onClick={handlePrevPage}
           disabled={currentPage === 1}
-          className='bg-primary-mild text-text-dark hover:bg-primary-light'>
+          className='bg-primary-light text-text-dark hover:bg-primary-light'>
           Previous
         </Button>
         <Typography variant='small' color='gray'>
@@ -145,7 +145,7 @@ export default function PricingCard() {
         <Button
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
-          className='bg-primary-mild text-text-dark hover:bg-primary-light'>
+          className='bg-primary-light text-text-dark hover:bg-primary-light'>
           Next
         </Button>
       </div>

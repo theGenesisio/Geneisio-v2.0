@@ -5,7 +5,7 @@ import TickerTape from "./Tradeview/TickerTape";
 import { staggerFadeIn } from "../../../assets/gsap";
 const CustomCard = ({ icon, title, description }) => (
   <div className='col col-12 lg:col-4 py-4 max-w-[30rem] gsapfeatures'>
-    <Card className='rounded-lg text-center shadow-md' variant='gradient' color='gray'>
+    <Card className='rounded-lg text-center shadow-md' >
       <CardBody>
         <div className='p-3 shadow bg-accent rounded inline-block'>{icon}</div>
         <div className='mt-4'>

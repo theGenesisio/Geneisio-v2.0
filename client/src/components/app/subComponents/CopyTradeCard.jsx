@@ -70,7 +70,7 @@ const CopyTradeCard = ({
   };
 
   return (
-    <Card color='gray' variant='gradient' className='w-full p-6'>
+    <Card  className='w-full p-6 bg-primary-default'>
       <CardHeader
         floated={false}
         shadow={false}
@@ -90,7 +90,7 @@ const CopyTradeCard = ({
           ${entryPrice}
         </Typography>
       </CardHeader>
-      <CardBody className='p-0'>
+      <CardBody className='p-0 text-text-light'>
         <ul className='flex flex-col gap-2'>
           {[
             { label: "Type", value: type },
