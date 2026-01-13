@@ -13,10 +13,6 @@ import crypto from 'crypto'
 import { getSafeUser } from '../helpers.js';
 const Router = _Router();
 const codeRequests = []
-// Router.route('/test-mail').get(async (req, res) => {
-//     const success = await mail('nathanmeyer045@gmail.com', 'Test Subject', 'Just testing it out for u',);
-//     res.json({ success });
-// });
 
 // ** API Routes
 Router.route('/register').post(async (req, res) => {
@@ -63,7 +59,6 @@ Router.route('/register').post(async (req, res) => {
         });
 
         const verificationLink = `${process.env.CLIENT_URL}/?token=${verificationToken}`;
-
         try {
             // 🔹 Send Verification Email
             await mail(
@@ -71,13 +66,6 @@ Router.route('/register').post(async (req, res) => {
                 'Verify Your Email',
                 [`Hi ${fullName},`, 'Please verify your email address to activate your Genesisio account.'],
                 verificationLink
-            );
-
-            // 🔹 Send Welcome Email
-            await mail(
-                email,
-                'Welcome to Genesisio',
-                [`Welcome aboard, ${fullName}!`, 'We’re thrilled to have you. Explore your dashboard and start your journey.']
             );
 
         } catch (mailError) {

@@ -1,58 +1,45 @@
 import dotenv from "dotenv";
 dotenv.config()
 import JWT from 'jsonwebtoken'
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend';
+
+// Initialize Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 // ** Helper for reauthenticating user access token
 async function generateAccessToken(user) {
-  return JWT.sign(user, process.env.JWT_ACCESS_TOKEN_SECRET, { expiresIn: '24h' })
+  return JWT.sign(user, process.env.JWT_ACCESS_TOKEN_SECRET, { expiresIn: '168h' })
 }
+
+// ** Helper for sending emails via Resend
 const mail = async (email, subject, html, verificationLink = null) => {
-  const MAILER_USERNAME = process.env.MAILER_USERNAME;
-  const MAILER_PASSWORD = process.env.MAILER_PASSWORD;
-  const DKIM_PRIVATE_KEY = process.env.DKIM_PRIVATE_KEY;
-
-  const transporter = nodemailer.createTransport({
-    host: "mail.privateemail.com",
-    port: 465,
-    secure: true,
-    auth: {
-      user: MAILER_USERNAME,
-      pass: MAILER_PASSWORD,
-    },
-    dkim: {
-      domainName: 'genesisio.net',
-      keySelector: 'default',
-      privateKey: DKIM_PRIVATE_KEY,
-    },
-  });
-
-  // Auto-detect bulk
-  const isBulk = Array.isArray(email) && email.length > 1;
-  const toField = isBulk ? '' : (Array.isArray(email) ? email[0] : email);
-
   try {
-    const info = await transporter.sendMail({
-      from: {
-        name: "Genesisio",
-        address: MAILER_USERNAME,
-      },
-      to: toField, // blank if bulk
-      bcc: isBulk ? [...email, MAILER_USERNAME] : MAILER_USERNAME,
+    // Auto-detect bulk sending
+    const isBulk = Array.isArray(email) && email.length > 1;
+    const recipients = Array.isArray(email) ? email : [email];
+
+    // Generate HTML content
+    const htmlContent = verificationLink
+      ? generateEmailHTMLVerification({ message: html, header: subject, verificationLink: verificationLink })
+      : generateWelcomeMail({ message: html, header: subject });
+
+    // Send email using Resend
+    const { data, error } = await resend.emails.send({
+      from: 'Genesisio <notifications@genesisio.net>',
+      to: recipients,
       subject: subject,
-      html: verificationLink ? generateEmailHTMLVerification({ message: html, header: subject, verificationLink: verificationLink }) : generateWelcomeMail({ message: html, header: subject }),
+      html: htmlContent,
     });
 
-    // Check if *any* recipient was accepted (not just one)
-    if (
-      (Array.isArray(email) && info.accepted.some(addr => email.includes(addr))) ||
-      (!Array.isArray(email) && info.accepted.includes(email))
-    ) {
-      return true;
+    if (error) {
+      console.error('Error sending email via Resend:', error);
+      return false;
     }
 
-    return false;
+    // Return true if email was successfully sent
+    return true;
   } catch (error) {
-    console.error("Error sending email:", error);
+    console.error('Error sending email:', error);
     return false;
   }
 };
@@ -154,7 +141,7 @@ function generateEmailHTMLVerification(details) {
                   <p style="font-size: 15px; margin: 0 0 8px 0; color: #FFD700;">
                     Have a question?
                   </p>
-                  <a href="mailto:support@genesisio.net" 
+                  <a href="mailto:notifications@genesisio.net" 
                      style="color: #d8d8d8; text-decoration: none; font-size: 14px;">
                     Contact support
                   </a>
@@ -249,7 +236,7 @@ function generateWelcomeMail(details) {
                   <p style="font-size: 15px; margin: 0 0 8px 0; color: #FFD700;">
                     Have a question?
                   </p>
-                  <a href="mailto:support@genesisio.net" 
+                  <a href="mailto:notifications@genesisio.net" 
                      style="color: #d8d8d8; text-decoration: none; font-size: 14px;">
                     Contact support
                   </a>

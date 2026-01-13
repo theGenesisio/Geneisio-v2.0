@@ -12,8 +12,8 @@ const contactInfo = [
   {
     iconClass: <EnvelopeIcon className='w-7 h-7' />,
     title: "Email",
-    link: "mailto:support@genesisio.net",
-    linkText: "support@genesisio.net",
+    link: "mailto:notifications@genesisio.net",
+    linkText: "notifications@genesisio.net",
   },
   {
     iconClass: <MapPinIcon className='w-7 h-7' />,
@@ -48,7 +48,7 @@ const Contact = () => {
       return;
     }
     openEmailClient(
-      "support@genesisio.net",
+      "notifications@genesisio.net",
       values.subject || "Edit to match your complaint",
       values.comments || "I need help with..."
     );

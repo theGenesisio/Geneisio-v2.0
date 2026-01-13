@@ -239,7 +239,7 @@ function SidebarContent() {
           onClick={() =>
             // todo change to support email
             openEmailClient(
-              "support@genesisio.net",
+              "notifications@genesisio.net",
               "Edit to match your complaint",
               "I need help with..."
             )
