@@ -72,8 +72,7 @@ const Assets = () => {
   return (
     <Card
       className='text-text-light w-full rounded-lg shadow-md pb-4'
-      variant='gradient'
-      color='gray'>
+    >
       <div className='flex flex-col p-2 min-w-96'>
         <p className='text-lg text-primary-light capitalize'>Crypto Assets</p>
         <p className='font-semibold text-2xl lg:text-4xl py-2 text-white'>

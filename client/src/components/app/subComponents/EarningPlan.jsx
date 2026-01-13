@@ -135,7 +135,7 @@ const Earning = () => {
   const displayDate = formattedDate.startsWith("Error:") ? "Unavailable" : formattedDate;
 
   return (
-    <Card className='dashboard-box flex flex-col !pb-0' variant='gradient' color='gray'>
+    <div className='dashboard-box flex flex-col !pb-0'>
       {loading ? (
         <Loader />
       ) : (
@@ -172,7 +172,7 @@ const Earning = () => {
       <div className='flex justify-center'>
         <PolarChart />
       </div>
-    </Card>
+    </div>
   );
 };
 

@@ -13,55 +13,50 @@ const FAQs = () => {
   };
   const faqs = [
     {
-      question: "Is there a startup bonus available?",
-      answer: "Yes! You’ll receive a $5 startup bonus immediately after registration.",
+      question: "Do you offer a sign-up bonus?",
+      answer: "Yes, a $5 startup bonus is credited to your account immediately upon registration.",
     },
     {
-      question: "Can I upgrade my plan after selecting a lower one?",
-      answer: "Absolutely. You can upgrade your plan once each 24-hour trading cycle is completed.",
+      question: "Can I upgrade my investment plan?",
+      answer: "Certainly. You can upgrade your plan at the end of any 24-hour trading cycle.",
     },
     {
-      question: "Do I earn rewards for referrals?",
-      answer:
-        "Yes. You'll receive a $5 bonus for every person who registers and funds their account through your referral link.",
+      question: "How does the referral program work?",
+      answer: "You will earn a $5 bonus for every new user who registers and funds their account using your unique referral link.",
     },
     {
-      question: "Is it possible to withdraw my deposit?",
-      answer:
-        "Yes, your deposit becomes available for withdrawal once the trading cycle concludes.",
+      question: "Can I withdraw my initial deposit?",
+      answer: "Yes, your initial deposit is available for withdrawal once the current trading cycle is completed.",
     },
     {
-      question: "What are the deposit limits?",
-      answer: "Minimum 500 maximum from $500,000-$1500000",
+      question: "What are the deposit requirements?",
+      answer: "The minimum deposit is $500, with a maximum limit ranging from $500,000 to $1,500,000 depending on the account type.",
     },
     {
-      question: "How is my money protected and profits guaranteed?",
-      answer:
-        "Our advanced trading algorithm securely manages your deposit, ensuring a guaranteed ROI at the close of each trading window.",
+      question: "How are my funds secured and returns guaranteed?",
+      answer: "We utilize advanced trading algorithms to manage deposits securely, ensuring consistent returns at the conclusion of each trading period.",
     },
     {
-      question: "When and how can I withdraw my earnings?",
-      answer:
-        "Earnings can be withdrawn once your profit or ROI matures, according to the schedule in your selected payment package.",
+      question: "What is the procedure for withdrawing profits?",
+      answer: "Profits can be withdrawn once they have matured, following the specific schedule outlined in your chosen investment package.",
     },
   ];
 
   const features = [
     {
-      icon: <QuestionMarkCircleIcon className='w-7 h-7' />,
-      title: "FAQs",
-      description: "Find quick answers and key insights about how our platform works.",
+      icon: <QuestionMarkCircleIcon className="w-7 h-7" />,
+      title: "Help Center",
+      description: "Access comprehensive answers and insights regarding our platform's operations.",
     },
     {
-      icon: <DocumentIcon className='w-7 h-7' />,
-      title: "Guides",
-      description:
-        "Follow our step-by-step guides to easily navigate and get the most out of your experience.",
+      icon: <DocumentIcon className="w-7 h-7" />,
+      title: "User Guides",
+      description: "Step-by-step instructions to help you navigate the platform and maximize your experience.",
     },
     {
-      icon: <span className='w-7 h-7'>{supportIcon}</span>,
-      title: "Support Request",
-      description: "Need help? Reach out to our 24/7 support team ready to assist you at any time.",
+      icon: <span className="w-7 h-7">{supportIcon}</span>,
+      title: "24/7 Support",
+      description: "Our dedicated support team is available around the clock to assist with any inquiries.",
     },
   ];
 
@@ -72,8 +67,7 @@ const FAQs = () => {
         <div className='text-center mb-12 gsapFAQs'>
           <h4 className='text-2xl font-semibold mb-4'>Get the Support You Deserve!</h4>
           <p className='text-text-light max-w-2xl mx-auto'>
-            Our friendly customer service team is always ready and available to assist you whenever
-            you need it.
+            Our dedicated support team is committed to providing timely assistance and ensuring you have a seamless experience on our platform.
           </p>
         </div>
 
@@ -125,10 +119,10 @@ const FAQs = () => {
           <div className='p-8 bg-accent text-white rounded-lg'>
             <div className='flex flex-wrap items-center'>
               <div className='w-full md:w-8/12 mb-8 md:mb-0'>
-                <h4 className='text-2xl font-bold mb-4'>The Better Way to Trade & Invest</h4>
-                <p>
-                  Join over 1.3 million customers who have achieved their financial goals by trading
-                  and investing with ease.
+                <h4 className='text-2xl font-bold mb-4'>A Smarter Way to Invest and Trade</h4>
+                <p className='text-white/90'>
+                  Join over 1.3 million users who have successfully reached their financial goals
+                  using our streamlined and secure platform.
                 </p>
               </div>
               <div className='w-full md:w-4/12 text-center md:text-right'>

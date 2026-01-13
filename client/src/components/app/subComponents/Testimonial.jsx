@@ -9,7 +9,7 @@ const testimonials = [
     role: "UI/UX Designer",
     image: Testimony1,
     review:
-      "This platform has transformed the way I handle creative projects—its simplicity and efficiency enhance my workflow effortlessly.",
+      "This platform has redefined my creative workflow. Its seamless interface and powerful features allow me to focus on design without any friction.",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const testimonials = [
     role: "Logistics Coordinator",
     image: Testimony2,
     review:
-      "Partnering with this team has been seamless. Their tools have significantly improved our productivity and kept us ahead of deadlines.",
+      "Our collaboration with this team has been outstanding. The tools provided have drastically enhanced our operational efficiency and project turnaround times.",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const testimonials = [
     role: "Digital Marketing Strategist",
     image: Testimony3,
     review:
-      "I've never experienced such an intuitive platform! It streamlines my campaigns, delivering better results with minimal effort.",
+      "The most user-friendly platform I've encountered. It has optimized our digital strategies, delivering exceptional performance and measurable growth.",
   },
 ];
 

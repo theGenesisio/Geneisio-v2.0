@@ -31,7 +31,7 @@ const RangeBarChart = () => {
       bar: {
         isDumbbell: true,
         columnWidth: "5%",
-        dumbbellColors: [["#388e3c", "#FFD700"]], // Changed color to #7B1FA2
+        dumbbellColors: [["#388e3c", "#0D9488"]], // Changed color to #7B1FA2
       },
     },
     legend: {
@@ -41,7 +41,7 @@ const RangeBarChart = () => {
       type: "gradient",
       gradient: {
         type: "vertical",
-        gradientToColors: ["#FFD700"], // Gradient matching the theme
+        gradientToColors: ["#0D9488"], // Gradient matching the theme
         inverseColors: true,
         stops: [0, 100],
       },

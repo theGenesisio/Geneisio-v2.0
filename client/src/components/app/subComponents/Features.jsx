@@ -24,16 +24,16 @@ const FeaturesSection = () => {
   staggerFadeIn(".gsapfeatures");
   const cardsData = [
     {
-      icon: <ShieldCheckIcon className='w-10 h-10' />,
-      title: "Security",
+      icon: <ShieldCheckIcon className="w-10 h-10" />,
+      title: "Advanced Encryption",
       description:
-        "We secure your data with 256-bit SSL encryption, offering premium protection against fraud and cyber threats.",
+        "Your data is protected by industry-leading 256-bit SSL encryption, ensuring top-tier defense against cyber threats and fraud.",
     },
     {
-      icon: <KeyIcon className='w-10 h-10' />,
-      title: "Two-Factor Authentication",
+      icon: <KeyIcon className="w-10 h-10" />,
+      title: "Multi-Layered Security",
       description:
-        "Every account includes 2FA by default, providing an extra safeguard against unauthorized access.",
+        "Every account is fortified with mandatory two-factor authentication, providing a robust safeguard against unauthorized access.",
     },
   ];
 

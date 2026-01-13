@@ -12,30 +12,33 @@ import { fadeIn, staggerFadeIn2 } from "../../../assets/gsap";
 const features = [
   {
     icon: <ArrowTrendingUpIcon className='w-5 h-5' />,
-    title: "Robust Trading Platforms",
+    title: "Versatile Trading Platforms",
     description:
-      "Access a range of platforms tailored to fit every trader’s unique style and goals.",
+      "Choose from a suite of platforms designed to accommodate various trading strategies and levels of expertise.",
   },
   {
     icon: <CreditCardIcon className='w-5 h-5' />,
-    title: "High Leverage",
-    description: "Amplify your potential gains with competitive leverage and tight spreads.",
+    title: "Competitive Leverage",
+    description:
+      "Maximize your market exposure with flexible leverage options and some of the tightest spreads available.",
   },
   {
     icon: <BoltIcon className='w-5 h-5' />,
-    title: "Rapid Execution",
-    description: "Trade seamlessly with lightning-fast software designed to reduce slippage.",
+    title: "Ultra-Fast Execution",
+    description:
+      "Minimize slippage and capitalize on market movements with our high-performance execution engine.",
   },
   {
     icon: <ShieldCheckIcon className='w-5 h-5' />,
-    title: "Top-notch Security",
+    title: "Ironclad Security",
     description:
-      "Stay protected with cutting-edge security systems that safeguard your account 24/7.",
+      "Your account's safety is our priority, backed by sophisticated encryption and continuous security monitoring.",
   },
   {
     icon: <span className='w-5 h-5 scale-125'>{supportIcon}</span>,
-    title: "24/7 Live Chat Support",
-    description: "Get immediate assistance anytime from our expert team and market analysts.",
+    title: "Expert Support 24/7",
+    description:
+      "Access professional assistance and market insights from our dedicated support team at any hour.",
   },
 ];
 

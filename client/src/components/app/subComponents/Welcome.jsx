@@ -34,7 +34,7 @@ const Welcome = () => {
           maximumFractionDigits: 2,
         })}`;
   return (
-    <Card className='dashboard-box flex flex-row relative !p-0' variant='gradient' color='gray'>
+    <div className='dashboard-box flex flex-row relative !p-0'>
       <div className='w-2/3 p-4'>
         <UserIcon className='h-7 w-7' />
         <h1 className='font-semibold text-xl'>{user?.fullName || "Customer"}</h1>
@@ -61,7 +61,7 @@ const Welcome = () => {
           className='absolute bottom-0 right-0 object-contain w-full'
         />
       </div>
-    </Card>
+    </div>
   );
 };
 

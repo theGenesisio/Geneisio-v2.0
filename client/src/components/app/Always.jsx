@@ -33,11 +33,11 @@ const MobileTradingSection = () => {
           <div className='w-full mt-6 md:mt-0 md:w-1/2'>
             <div className='ml-0 md:ml-5 gsapAlways'>
               <h4 className='mb-4 text-lg font-semibold'>
-                Always on the go? Trade seamlessly with our mobile-optimized platform!
+                Seamless Trading, Anywhere You Go
               </h4>
               <p className='text-muted gsapAlways'>
-                Tap into our custom-built Trading Platform and experience smooth, hassle-free
-                trading anytime, anywhere.
+                Stay connected to the markets with our custom-built mobile platform, 
+                designed for speed and reliability on every device.
               </p>
               <Link to='./about' className='accent-btn inline-block mt-8 !px-4'>
                 Learn More

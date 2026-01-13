@@ -22,7 +22,7 @@ const ProgressChart = () => {
           size: "45%", // Hollow area size
         },
         track: {
-          background: user.signal >= 0 ? "#262626" : "#d32f2f", // Dark background for track
+          background: user.signal >= 0 ? "#042F2E" : "#d32f2f", // Dark background for track
         },
         dataLabels: {
           show: true,
@@ -45,7 +45,7 @@ const ProgressChart = () => {
       gradient: {
         shade: "dark",
         type: "horizontal",
-        gradientToColors: ["#FFD700"], // Color at 100%
+        gradientToColors: ["#0D9488"], // Color at 100%
         stops: [0, 100], // Defines gradient progression
         colors: ["#388e3c"], // Color at 0%
         // colors: ["#d32f2f"], // Color at 0%
@@ -87,7 +87,7 @@ const ProgressChart = () => {
  */
 const Signal = () => {
   return (
-    <Card className='dashboard-box flex flex-col' variant='gradient' color='gray'>
+    <div className='dashboard-box flex flex-col'>
       <div className='flex flex-col'>
         <p className='font-semibold text-xl flex flex-col'>
           <WifiIcon className='h-7 w-7' /> Signal
@@ -99,7 +99,7 @@ const Signal = () => {
       <div className=''>
         <ProgressChart />
       </div>
-    </Card>
+    </div>
   );
 };
 

@@ -34,7 +34,7 @@ const AreaChart = () => {
         },
       },
     },
-    colors: ["#FFD700"], // Sets the area chart color
+    colors: ["#0D9488"], // Sets the area chart color
     dataLabels: {
       enabled: false, // Hides data labels
     },

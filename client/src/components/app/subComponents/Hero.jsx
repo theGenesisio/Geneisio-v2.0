@@ -9,10 +9,13 @@ const Hero = () => {
     <div className='flex flex-col lg:flex-row items-center justify-between px-6 py-10 lg:px-20 min-h-[90dvh] gap-4'>
       {/* Text Section */}
       <div className='lg:max-w-xl hero'>
-        <h1 className='text-4xl font-bold mb-4'>Smart Solutions for Trading and Investing</h1>
+        <h1 className='text-4xl font-bold mb-4'>
+          The Smarter Way to Trade and Invest
+        </h1>
         <p className='text-lg text-gray-600 mb-6'>
-          With effortless trading and investing,we’ve enabled 1.3 million+ customers reach their
-          financial goals. Enjoy safe secure digital asset holding wallet.
+          Join over 1.3 million users achieving their financial goals with our
+          seamless platform. Experience secure, effortless management of your
+          digital assets today.
         </p>
 
         <div className='flex flex-row justify-start gap-2 w-full'>
