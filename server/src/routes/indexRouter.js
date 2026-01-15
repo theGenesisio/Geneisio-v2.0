@@ -61,7 +61,7 @@ Router.route("/user")
 
             const user = await findOneFilter({ _id: req.user._id }, 1)
             if (!user) {
-                return res.status(404).json({ message: 'User not found', user: safeUser });
+                return res.status(404).json({ message: 'User not found', user: null });
             }
             const safeUser = await getSafeUser(user)
             return res.status(200).json({

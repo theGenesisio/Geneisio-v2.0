@@ -95,19 +95,20 @@ Router.route('/login')
             return res.status(400).json({ message: 'Missing login credentials' });
         }
 
-        const user = await findOneFilter({ email: email }, 1);
-
-        if (!user) {
-            return res.status(404).json({ message: 'No user found' });
-        }
-
-        // if (!user.isVerified) {
-        //     return res.status(401).json({ message: 'Email not verified, please verify your email or contact support' });
-        // }
-        if (user.blocked) {
-            return res.status(401).json({ message: 'User account is currently restricted, contact support to clarify' });
-        }
         try {
+            const user = await findOneFilter({ email: email }, 1);
+
+            if (!user) {
+                return res.status(404).json({ message: 'No user found' });
+            }
+
+            // if (!user.isVerified) {
+            //     return res.status(401).json({ message: 'Email not verified, please verify your email or contact support' });
+            // }
+            if (user.blocked) {
+                return res.status(401).json({ message: 'User account is currently restricted, contact support to clarify' });
+            }
+
             const passwordMatch = await bcrypt.compare(password, user.password);
 
             if (passwordMatch) {
@@ -131,7 +132,15 @@ Router.route('/login')
                 res.status(401).json({ message: 'Invalid password' });
             }
         } catch (error) {
-            console.error(error);
+            console.error('Login error:', error);
+
+            // Check if it's a timeout error
+            if (error.name === 'MongooseError' && error.message.includes('buffering timed out')) {
+                return res.status(503).json({
+                    message: 'Database connection timeout. Please try again in a moment.'
+                });
+            }
+
             res.status(500).json({ message: 'An error occurred during login' });
         }
     });

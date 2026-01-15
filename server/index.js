@@ -14,12 +14,38 @@ const __dirname = path.dirname(__filename);
 // Determine the base directory
 const baseDir = process.env.NODE_ENV === 'production' ? path.join(process.cwd(), "/server") : __dirname;
 
-// Database connection
+// Database connection with improved error handling
 mongoose.connect(process.env.MONGO_ATLAS_URI, {
-    serverSelectionTimeoutMS: 100000
+    serverSelectionTimeoutMS: 100000,
+    connectTimeoutMS: 30000,
+    socketTimeoutMS: 45000,
 })
     .then(() => console.log('Connected to Genesisio DB successfully'))
-    .catch(err => console.log(`ERROR In Connection to Genesisio DB: \n ${err}`));
+    .catch(err => console.error(`ERROR In Connection to Genesisio DB: \n ${err}`));
+
+// Connection event listeners for production debugging
+mongoose.connection.on('connected', () => {
+    console.log('Mongoose connected to MongoDB');
+});
+
+mongoose.connection.on('error', (err) => {
+    console.error('Mongoose connection error:', err);
+});
+
+mongoose.connection.on('disconnected', () => {
+    console.warn('Mongoose disconnected from MongoDB');
+});
+
+// Middleware to check database connection before processing requests
+const checkDbConnection = (req, res, next) => {
+    if (mongoose.connection.readyState !== 1) {
+        return res.status(503).json({
+            message: 'Database temporarily unavailable. Please try again in a moment.',
+            dbState: mongoose.connection.readyState
+        });
+    }
+    next();
+};
 
 // CORS configuration
 const allowedOrigins = {
@@ -52,9 +78,9 @@ import authRouter from './src/auth/JWT.js';
 import indexRouter from './src/routes/indexRouter.js';
 import imageRouter from './src/routes/imageRouter.js';
 
-app.use('/api', indexRouter);
-app.use('/api/img', imageRouter);
-app.use('/api/auth', authRouter);
+app.use('/api', checkDbConnection, indexRouter);
+app.use('/api/img', checkDbConnection, imageRouter);
+app.use('/api/auth', checkDbConnection, authRouter);
 
 // Root endpoint
 app.get('/', (req, res) => res.json({ message: 'Get a life bro!' }));
