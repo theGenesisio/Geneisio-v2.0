@@ -105,10 +105,9 @@ import './src/cronjobs/refreshTokenJob.js';
 import authRouter from './src/auth/JWT.js';
 import indexRouter from './src/routes/indexRouter.js';
 import imageRouter from './src/routes/imageRouter.js';
-import debugRouter from './src/debug-endpoint.js';
 
-/* Debug Endpoint - Must be FIRST to bypass middleware */
-app.use('/api', debugRouter);
+
+
 
 app.use('/api', checkDbConnection, indexRouter);
 app.use('/api/img', checkDbConnection, imageRouter);
