@@ -105,10 +105,14 @@ import './src/cronjobs/refreshTokenJob.js';
 import authRouter from './src/auth/JWT.js';
 import indexRouter from './src/routes/indexRouter.js';
 import imageRouter from './src/routes/imageRouter.js';
+import debugRouter from './src/debug-endpoint.js';
 
 app.use('/api', checkDbConnection, indexRouter);
 app.use('/api/img', checkDbConnection, imageRouter);
 app.use('/api/auth', checkDbConnection, authRouter);
+
+/* Debug Endpoint */
+app.use('/api', debugRouter);
 
 // Root endpoint
 app.get('/', (req, res) => res.json({ message: 'Get a life bro!' }));
