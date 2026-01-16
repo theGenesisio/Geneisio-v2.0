@@ -107,12 +107,12 @@ import indexRouter from './src/routes/indexRouter.js';
 import imageRouter from './src/routes/imageRouter.js';
 import debugRouter from './src/debug-endpoint.js';
 
+/* Debug Endpoint - Must be FIRST to bypass middleware */
+app.use('/api', debugRouter);
+
 app.use('/api', checkDbConnection, indexRouter);
 app.use('/api/img', checkDbConnection, imageRouter);
 app.use('/api/auth', checkDbConnection, authRouter);
-
-/* Debug Endpoint */
-app.use('/api', debugRouter);
 
 // Root endpoint
 app.get('/', (req, res) => res.json({ message: 'Get a life bro!' }));
