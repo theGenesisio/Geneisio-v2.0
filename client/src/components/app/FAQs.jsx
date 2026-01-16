@@ -76,9 +76,7 @@ const FAQs = () => {
           {features.map((feature, index) => (
             <Card
               key={index}
-              variant='gradient'
-              color='gray'
-              className='p-6 text-center shadow-md gsapFAQs'>
+              className='p-6 text-center shadow-md gsapFAQs bg-primary-dark'>
               <div className='flex flex-row justify-center gap-4'>
                 <div className='text-text-light mb-4 text-4xl'>{feature.icon}</div>
                 <h5 className='text-lg font-medium text-text-light'>{feature.title}</h5>
@@ -103,7 +101,7 @@ const FAQs = () => {
           <div className='space-y-4'>
             {faqs.map((faq, index) => (
               <Accordion key={index} open={open === index} className='border-0 rounded-lg gsapFAQs'>
-                <AccordionHeader onClick={() => handleOpen(index)} className='p-4 bg-accent'>
+                <AccordionHeader onClick={() => handleOpen(index)} className='p-4 bg-primary-dark'>
                   <h6 className='text-lg font-medium text-white'>{faq.question}</h6>
                 </AccordionHeader>
                 <AccordionBody className='p-4 text-text-light'>{faq.answer}</AccordionBody>

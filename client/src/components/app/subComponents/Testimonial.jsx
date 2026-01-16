@@ -51,7 +51,7 @@ const Testimonials = () => {
         <Carousel autoplay={true} loop={true} autoplayDelay={3000} className='mt-10 gsapTestimony'>
           {testimonials.map(({ id, name, role, image, review }) => (
             <div key={id} className='flex justify-center items-center h-[400px]'>
-              <Card className='m-2 shadow-lg' >
+              <Card className='m-2 shadow-lg bg-primary-default' >
                 <CardHeader floated={false} className='mx-auto'>
                   <img src={image} alt={name} className='rounded-none object-cover w-32 h-32' />
                 </CardHeader>

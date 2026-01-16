@@ -52,7 +52,7 @@ const ServicesSection = () => {
           <Typography variant='h4' className='mb-4 text-text-light'>
             Explore Our Services
           </Typography>
-          <Typography variant='paragraph' className='text-gray-600 max-w-xl mx-auto'>
+          <Typography variant='paragraph' className='text-text-light max-w-xl mx-auto'>
             Our mission is to ensure you have a seamless and rewarding trading experience!
           </Typography>
         </div>
@@ -62,9 +62,7 @@ const ServicesSection = () => {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className='p-4 shadow-md gsapServices'
-                variant='gradient'
-                color='gray'>
+                className='p-4 shadow-md gsapServices bg-primary-dark'>
                 <CardBody className='flex items-start'>
                   <div className='flex-shrink-0 mr-4'>
                     <div className='w-12 h-12 flex items-center justify-center bg-accent rounded-full text-text-light'>
@@ -75,7 +73,7 @@ const ServicesSection = () => {
                     <Typography variant='h6' className='mb-2 text-text-light'>
                       {feature.title}
                     </Typography>
-                    <Typography variant='paragraph' className='text-gray-600'>
+                    <Typography variant='paragraph' className='text-text-light'>
                       {feature.description}
                     </Typography>
                   </div>
