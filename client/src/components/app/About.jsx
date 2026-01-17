@@ -42,7 +42,7 @@ const About = () => {
             <div className='w-full md:w-7/12 px-4'>
               <div className='ml-0 md:ml-8'>
                 <h4 className='text-2xl font-bold mb-4'>About Us</h4>
-                <p className='text-gray-600 leading-relaxed'>
+                <p className='text-text-light leading-relaxed'>
                   Our platform delivers innovative tools designed to simplify wealth creation and
                   management. Whether you are a hedge fund manager, mutual fund professional, or a
                   trader in Forex, stocks, and cryptocurrencies, we provide the infrastructure to
@@ -81,7 +81,7 @@ const About = () => {
       {/* Sign-Up Section */}
       <section className='py-12 bg-primary-default'>
         <div className='container mx-auto px-4'>
-          <div className='p-8 bg-accent text-white rounded-lg'>
+          <div className='p-8 bg-accent text-text-light rounded-lg'>
             <div className='flex flex-wrap items-center'>
               <div className='w-full md:w-8/12 mb-8 md:mb-0'>
                 <h4 className='text-2xl font-bold mb-4'>A Smarter Way to Trade and Invest</h4>
