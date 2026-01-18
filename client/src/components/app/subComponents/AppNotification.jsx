@@ -7,11 +7,13 @@ import FetchWithAuth from "../../auth/api";
 const AppNotification = () => {
   const [notifications, setNotifications] = useState([]);
   const classes = {
-    success: "bg-success-light border-success-dark text-success-dark",
-    error: "bg-error-light border-error-dark text-error-dark",
-    warning: "bg-warning-light border-warning-dark text-warning-dark",
-    "*": "bg-white border-primary-dark text-text-dark",
+    success: { box: "bg-success-light/20 text-success-light", text: "text-success-light" },
+    error: { box: "bg-error-light/20 text-error-light", text: "text-error-light" },
+    warning: { box: "bg-warning-light/20 text-warning-light", text: "text-warning-light" },
+    info: { box: "bg-primary-default text-text-light", text: "text-text-light" },
   };
+
+  const getNotificationClass = (type) => classes[type] || classes.info;
 
   const fetchNotifications = async () => {
     try {
@@ -81,7 +83,7 @@ const AppNotification = () => {
   return notifications.length > 0 ? (
     <Badge
       content={notifications?.length}
-      className={`${classes[notifications[0].type]} border-2`}
+      className={`${getNotificationClass(notifications[0].type).box} border-2`}
       placement='top-start'>
       <Carousel
         transition={{ duration: 1 }}
@@ -107,17 +109,17 @@ const AppNotification = () => {
             key={notification._id}
             icon={getIcon(notification.type)}
             open={true}
-            className={`rounded-none border-l-8 h-full w-full -ml-0.5 ${
-              classes[notification.type]
+            className={`rounded-none h-full w-full -ml-0.5 ${
+              getNotificationClass(notification.type).box
             } font-medium md:min-h-[5rem] sm:min-h-[8rem]`}
             action={
               <div className='flex flex-row !absolute top-3 right-3 space-x-2'>
                 <EyeIcon
-                  className={`w-5 h-5 ${classes[notification.type]}`}
+                  className={`w-5 h-5 cursor-pointer ${getNotificationClass(notification.type).text}`}
                   onClick={() => markRead(notification._id)}
                 />
                 <XCircleIcon
-                  className={`w-5 h-5 ${classes[notification.type]}`}
+                  className={`w-5 h-5 cursor-pointer ${getNotificationClass(notification.type).text}`}
                   onClick={() => handleClose(notification._id)}
                 />
               </div>
@@ -131,7 +133,7 @@ const AppNotification = () => {
     <Alert
       icon={notificationIcon}
       open={true}
-      className={`border-0 ${classes["*"]} font-medium md:min-h-[5rem] sm:min-h-[8rem] rounded-lg mb-4 mt-2`}>
+      className={`${classes.info.box} font-medium md:min-h-[5rem] sm:min-h-[8rem] rounded-lg mb-4 mt-2`}>
       No notifications available right now
     </Alert>
   );

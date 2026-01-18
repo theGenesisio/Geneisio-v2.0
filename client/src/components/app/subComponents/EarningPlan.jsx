@@ -82,7 +82,7 @@ const PolarChart = () => {
     theme: {
       monochrome: {
         enabled: true,
-        color: "#388e3c",
+        color: "#f59e0b",
         shadeTo: "light",
         shadeIntensity: 0.5,
       },

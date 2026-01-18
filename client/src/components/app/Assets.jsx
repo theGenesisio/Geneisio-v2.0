@@ -86,7 +86,7 @@ const Assets = () => {
           <Loader />
         ) : (
           <table className='w-full text-left text-sm'>
-            <thead className='bg-primary-light'>
+            <thead className='bg-primary-dark'>
               {Object.entries(crypto.cryptoAssets).some(([, amount]) => parseFloat(amount) > 0) && (
                 <tr>
                   <th className='p-4'>Sym</th>

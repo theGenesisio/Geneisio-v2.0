@@ -22,7 +22,7 @@ const ProgressChart = () => {
           size: "45%", // Hollow area size
         },
         track: {
-          background: user.signal >= 0 ? "#042F2E" : "#d32f2f", // Dark background for track
+          background: user.signal >= 0 ? "#15100d" : "#d32f2f", // Dark background for track
         },
         dataLabels: {
           show: true,
@@ -45,9 +45,9 @@ const ProgressChart = () => {
       gradient: {
         shade: "dark",
         type: "horizontal",
-        gradientToColors: ["#0D9488"], // Color at 100%
+        gradientToColors: ["#f59e0b"], // Color at 100%
         stops: [0, 100], // Defines gradient progression
-        colors: ["#388e3c"], // Color at 0%
+        colors: ["#A16207"], // Color at 0%
         // colors: ["#d32f2f"], // Color at 0%
       },
     },

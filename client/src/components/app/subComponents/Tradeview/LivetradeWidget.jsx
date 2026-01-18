@@ -19,15 +19,15 @@ const TradingViewWidget = () => {
       isTransparent: true,
       showSymbolLogo: true,
       showFloatingTooltip: true,
-      plotLineColorGrowing: "rgba(53, 28, 117, 1)",
+      plotLineColorGrowing: "rgba(245, 158, 11, 1)", // Gold
       plotLineColorFalling: "rgba(153, 0, 0, 1)",
       gridLineColor: "rgba(42, 46, 57, 0)",
       scaleFontColor: "rgba(209, 212, 220, 1)",
-      belowLineFillColorGrowing: "rgba(142, 124, 195, 0.12)",
+      belowLineFillColorGrowing: "rgba(245, 158, 11, 0.12)", // Gold low opacity
       belowLineFillColorFalling: "rgba(53, 28, 117, 0.12)",
       belowLineFillColorGrowingBottom: "rgba(41, 98, 255, 0)",
       belowLineFillColorFallingBottom: "rgba(41, 98, 255, 0)",
-      symbolActiveColor: "rgba(180, 167, 214, 0.12)",
+      symbolActiveColor: "rgba(245, 158, 11, 0.12)", // Gold low opacity
       tabs: [
         {
           title: "Indices & Stocks",
