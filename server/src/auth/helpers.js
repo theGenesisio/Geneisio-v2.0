@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 dotenv.config()
 import JWT from 'jsonwebtoken'
 import { Resend } from 'resend';
+import crypto from 'crypto';
 
 // Initialize Resend
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -23,12 +24,23 @@ const mail = async (email, subject, html, verificationLink = null) => {
       ? generateEmailHTMLVerification({ message: html, header: subject, verificationLink: verificationLink })
       : generateWelcomeMail({ message: html, header: subject });
 
+    // Generate Plain Text content
+    const { convert } = await import('html-to-text');
+    const textContent = convert(htmlContent, {
+      wordwrap: 130
+    });
+
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: 'Genesisio <notifications@genesisio.net>',
       to: recipients,
+      replyTo: 'notifications@genesisio.net',
       subject: subject,
       html: htmlContent,
+      text: textContent,
+      headers: {
+        'X-Entity-Ref-ID': crypto.randomUUID(),
+      }
     });
 
     if (error) {
