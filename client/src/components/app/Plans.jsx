@@ -111,9 +111,13 @@ export default function PricingCard() {
                     <CheckCircleIcon className='w-5 h-5 text-primary-mild' />
                     <Typography className='font-normal'>Max: ${plan.limits.max}</Typography>
                   </li>
-                  <li className='flex items-center gap-4'>
+                   <li className='flex items-center gap-4'>
                     <CheckCircleIcon className='w-5 h-5 text-primary-mild' />
                     <Typography className='font-normal'>Duration: {plan.duration} days</Typography>
+                  </li>
+                  <li className='flex items-center gap-4'>
+                    <CheckCircleIcon className='w-5 h-5 text-primary-mild' />
+                    <Typography className='font-normal'>{plan.details}</Typography>
                   </li>
                 </ul>
               </CardBody>
