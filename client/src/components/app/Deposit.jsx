@@ -11,6 +11,8 @@ import {
   ltcIcon,
   paypalIcon,
   usdtIcon,
+  xrpIcon,
+  solanaIcon,
 } from "../../assets/icons";
 import DepositModal from "./subComponents/DepositOptionModal";
 const Deposit = () => {
@@ -57,11 +59,14 @@ const Deposit = () => {
       cashapp: cashasppIcon,
       paypal: paypalIcon,
       usdt: usdtIcon,
+      xrp: xrpIcon,
+      solana: solanaIcon,
     };
-    return (
-      iconMap[name.toLowerCase()] ||
-      (name.toLowerCase().includes("usdt") ? usdtIcon : <BuildingLibraryIcon className='w-5 h-5' />)
-    );
+
+    const lowerName = name.toLowerCase();
+    const matchedKey = Object.keys(iconMap).find((key) => lowerName.includes(key));
+
+    return matchedKey ? iconMap[matchedKey] : <BuildingLibraryIcon className='w-5 h-5' />;
   };
   const handleSelectOption = (index) => {
     handleOpen();
